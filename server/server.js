@@ -26,6 +26,14 @@ app.post('/todos', (req, res) => {
 
 });
 
+// app.get('/todos', (res, req) => {
+//   var query = req.body.text;
+// });
+
 app.listen(3000, () => {
   console.log(`App is currently running on port: ${3000}`);
 });
+
+module.exports = {
+  app
+};
