@@ -26,9 +26,13 @@ app.post('/todos', (req, res) => {
 
 });
 
-// app.get('/todos', (res, req) => {
-//   var query = req.body.text;
-// });
+app.get('/todos', (req, res) => {
+  Todo.find().then((todos) => {
+    res.send({todos});
+  }, (err) => {
+    res.status(400).send(err);
+  })
+});
 
 app.listen(3000, () => {
   console.log(`App is currently running on port: ${3000}`);
