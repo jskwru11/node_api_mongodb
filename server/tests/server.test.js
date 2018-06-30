@@ -98,5 +98,13 @@ describe('GET /todos/:id', () => {
       .expect(404)
       .end(done);
   });
+});
 
+describe('DELETE /todos/:id', () => {
+  it('should remove a todo by id', (done) => {
+    request(app)
+      .delete(`/todos/${todos[0]._id.toHexString()}`)
+      .expect(200)
+      .end(done);
+  });
 });
